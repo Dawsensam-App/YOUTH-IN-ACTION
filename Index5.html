@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Week of Prayer 2025 Countdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #001F3F, #0074D9);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            background: -webkit-linear-gradient(#FF4136, #FFFFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .sub-header {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .countdown {
+            font-size: 42px;
+            font-weight: bold;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(to right, #FF4136, #FFFFFF);
+            color: #001F3F;
+            border-radius: 50%;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+        }
+        .card {
+            background: white;
+            color: #001F3F;
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            font-size: 28px;
+        }
+        .event-info {
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Youth Week of Prayer 2025</div>
+    <div class="sub-header">A Community Transformed</div>
+    <div class="card">
+        <p>Countdown to the event:</p>
+        <div class="countdown" id="countdown"></div>
+        <p class="event-info">March 15 - 22, 2025 | 7:00 PM</p>
+        <p>Palm Springs Seventh-day Adventist Church</p>
+        <p>4424 S Military Trl, Lake Worth Beach, FL 33463</p>
+    </div>
+    <script>
+        function updateCountdown() {
+            const eventDate = new Date("March 15, 2025 19:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = eventDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
